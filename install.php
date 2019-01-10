@@ -10,9 +10,9 @@ set_time_limit(0);
 
 ob_start();
 define('IA_ROOT', str_replace("\\",'/', dirname(__FILE__)));
-define('APP_URL', 'http://www.qdyma.com/');
-define('APP_STORE_URL', 'http://www.qdyma.com/');
-define('APP_STORE_API', 'http://www.qdyma.com/');
+define('APP_URL', 'http://www.5gwang.cn/');
+define('APP_STORE_URL', 'http://www.5gwang.cn/');
+define('APP_STORE_API', 'http://www.5gwang.cn/');
 if($_GET['res']) {
 	$res = $_GET['res'];
 	$reses = tpl_resources();
@@ -76,7 +76,7 @@ if($action == 'env') {
 	if(version_compare(PHP_VERSION, '5.3.0') == -1) {
 		$ret['php']['version']['class'] = 'danger';
 		$ret['php']['version']['failed'] = true;
-		$ret['php']['version']['remark'] = 'PHP版本必须为 5.3.0 以上';
+		$ret['php']['version']['remark'] = 'PHP版本必须为 5.3.0 以上. <a href="http://bbs.5gwang.cn/forum.php?mod=viewthread&tid=3555">详情</a>';
 	}
 
 	$ret['php']['pdo']['ok'] = extension_loaded('pdo') && extension_loaded('pdo_mysql');
@@ -87,7 +87,7 @@ if($action == 'env') {
 		$ret['php']['pdo']['failed'] = true;
 		$ret['php']['pdo']['value'] = '<span class="glyphicon glyphicon-remove text-warning"></span>';
 		$ret['php']['pdo']['class'] = 'warning';
-		$ret['php']['pdo']['remark'] = '您的PHP环境不支持PDO, 请开启此扩展. <a target="_blank" href="http://www.qdyma.com">详情</a>';
+		$ret['php']['pdo']['remark'] = '您的PHP环境不支持PDO, 请开启此扩展. <a target="_blank" href="http://www.5gwang.cn">详情</a>';
 	}
 
 	$ret['php']['fopen']['ok'] = @ini_get('allow_url_fopen') && function_exists('fsockopen');
@@ -104,7 +104,7 @@ if($action == 'env') {
 	} else {
 		$ret['php']['curl']['value'] = '<span class="glyphicon glyphicon-remove text-danger"></span>';
 		$ret['php']['curl']['class'] = 'danger';
-		$ret['php']['curl']['remark'] = '您的PHP环境不支持cURL, 也不支持 allow_url_fopen, 系统无法正常运行. <a target="_blank" href="http://www.qdyma.com">详情</a>';
+		$ret['php']['curl']['remark'] = '您的PHP环境不支持cURL, 也不支持 allow_url_fopen, 系统无法正常运行. <a target="_blank" href="http://www.5gwang.cn">详情</a>';
 		$ret['php']['curl']['failed'] = true;
 	}
 
@@ -116,7 +116,7 @@ if($action == 'env') {
 		$ret['php']['ssl']['value'] = '<span class="glyphicon glyphicon-remove text-danger"></span>';
 		$ret['php']['ssl']['class'] = 'danger';
 		$ret['php']['ssl']['failed'] = true;
-		$ret['php']['ssl']['remark'] = '没有启用OpenSSL, 将无法访问公众平台的接口, 系统无法正常运行. <a target="_blank" href="http://www.qdyma.com">详情</a>';
+		$ret['php']['ssl']['remark'] = '没有启用OpenSSL, 将无法访问公众平台的接口, 系统无法正常运行. <a target="_blank" href="http://www.5gwang.cn">详情</a>';
 	}
 
 	$ret['php']['gd']['ok'] = extension_loaded('gd');
@@ -127,7 +127,7 @@ if($action == 'env') {
 		$ret['php']['gd']['value'] = '<span class="glyphicon glyphicon-remove text-danger"></span>';
 		$ret['php']['gd']['class'] = 'danger';
 		$ret['php']['gd']['failed'] = true;
-		$ret['php']['gd']['remark'] = '没有启用GD, 将无法正常上传和压缩图片, 系统无法正常运行. <a target="_blank" href="http://www.qdyma.com">详情</a>';
+		$ret['php']['gd']['remark'] = '没有启用GD, 将无法正常上传和压缩图片, 系统无法正常运行. <a target="_blank" href="http://www.5gwang.cn">详情</a>';
 	}
 
 	$ret['php']['dom']['ok'] = class_exists('DOMDocument');
@@ -138,7 +138,7 @@ if($action == 'env') {
 		$ret['php']['dom']['value'] = '<span class="glyphicon glyphicon-remove text-danger"></span>';
 		$ret['php']['dom']['class'] = 'danger';
 		$ret['php']['dom']['failed'] = true;
-		$ret['php']['dom']['remark'] = '没有启用DOMDocument, 将无法正常安装使用模块, 系统无法正常运行. <a target="_blank" href="http://www.qdyma.com">详情</a>';
+		$ret['php']['dom']['remark'] = '没有启用DOMDocument, 将无法正常安装使用模块, 系统无法正常运行. <a target="_blank" href="http://www.5gwang.cn">详情</a>';
 	}
 
 	$ret['php']['session']['ok'] = ini_get('session.auto_start');
@@ -149,7 +149,7 @@ if($action == 'env') {
 		$ret['php']['session']['value'] = '<span class="glyphicon glyphicon-remove text-danger"></span>';
 		$ret['php']['session']['class'] = 'danger';
 		$ret['php']['session']['failed'] = true;
-		$ret['php']['session']['remark'] = '系统session.auto_start开启, 将无法正常注册会员, 系统无法正常运行. <a target="_blank" href="http://www.qdyma.com">详情</a>';
+		$ret['php']['session']['remark'] = '系统session.auto_start开启, 将无法正常注册会员, 系统无法正常运行. <a target="_blank" href="http://www.5gwang.cn">详情</a>';
 	}
 
 	$ret['php']['asp_tags']['ok'] = ini_get('asp_tags');
@@ -171,7 +171,7 @@ if($action == 'env') {
 		$ret['write']['root']['value'] = '<span class="glyphicon glyphicon-remove text-danger"></span>';
 		$ret['write']['root']['class'] = 'danger';
 		$ret['write']['root']['failed'] = true;
-		$ret['write']['root']['remark'] = '本地目录无法写入, 将无法使用自动更新功能, 系统无法正常运行.  <a href="http://www.qdyma.com">详情</a>';
+		$ret['write']['root']['remark'] = '本地目录无法写入, 将无法使用自动更新功能, 系统无法正常运行.  <a href="http://www.5gwang.cn">详情</a>';
 	}
 	$ret['write']['data']['ok'] = local_writeable(IA_ROOT . '/data');
 	if($ret['write']['data']['ok']) {
@@ -270,7 +270,7 @@ if($action == 'db') {
 					die('<script type="text/javascript">alert("连接不到服务器, 请稍后重试！");history.back();</script>');
 				}
 				if($ins == 'error') {
-					die('<script type="text/javascript">alert("版本错误，请确认是否为微起点最新版安装文件！");history.back();</script>');
+					die('<script type="text/javascript">alert("版本错误，请确认是否为5G网最新版安装文件！");history.back();</script>');
 				}
 
 				$link = new PDO("mysql:dbname={$db['name']};host={$db['server']};port={$db['port']}", $db['username'], $db['password']);
@@ -305,7 +305,7 @@ if($action == 'db') {
 					local_run($data);
 				}
 			} else {
-				die('<script type="text/javascript">alert("你正在使用本地安装, 但未下载完整安装包, 请从官网下载完整安装包后重试.");history.back();</script>');
+				die('<script type="text/javascript">alert("你正在使用本地安装, 但未下载完整安装包, 请从5G网官网下载完整安装包后重试.");history.back();</script>');
 			}
 
 			$salt = local_salt(8);
@@ -670,7 +670,7 @@ function remote_install() {
 	$pars['version'] = '1.0';
 	$pars['type'] = 'install';
 	$pars['method'] = 'application.install';
-	$url = 'http://www.qdyma.com';
+	$url = 'http://www.5gwang.cn';
 	$urlset = parse_url($url);
 	$cloudip = gethostbyname($urlset['host']);
 	$headers[] = "Host: {$urlset['host']}";
@@ -712,7 +712,7 @@ function tpl_frame() {
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>安装系统 - 公众平台自助开源引擎</title>
+		<title>安装系统 - 5G网 - 公众平台自助开源引擎</title>
 		<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<style>
 			html,body{font-size:13px;font-family:"Microsoft YaHei UI", "微软雅黑", "宋体";}
@@ -731,8 +731,9 @@ function tpl_frame() {
 		<div class="container" style="width:1200px;">
 			<div class="header" style="margin:15px auto;">
 				<ul class="nav nav-pills pull-right" role="tablist">
-					<li role="presentation" class="active"><a href="javascript:;">安装微擎系统</a></li>
-					
+					<li role="presentation" class="active"><a href="javascript:;">安装5G网系统</a></li>
+					<li role="presentation"><a href="http://www.5gwang.cn">5G网官网</a></li>
+					<li role="presentation"><a href="http://www.5gwang.cn">访问论坛</a></li>
 				</ul>
 				<img src="web/resource/images/gw-logo.png" />
 			</div>
@@ -751,9 +752,9 @@ function tpl_frame() {
 							<a href="javascript:;" class="list-group-item{$steps[0]}"><span class="glyphicon glyphicon-copyright-mark"></span> &nbsp; 许可协议</a>
 							<a href="javascript:;" class="list-group-item{$steps[1]}"><span class="glyphicon glyphicon-eye-open"></span> &nbsp; 环境监测</a>
 							<a href="javascript:;" class="list-group-item{$steps[2]}"><span class="glyphicon glyphicon-cog"></span> &nbsp; 参数配置</a>
-							
-							<a href="javascript:;" class="list-group-item{$steps[3]}"><span class="glyphicon glyphicon-refresh"></span> &nbsp; 更新到完整版</a>
-							<a href="javascript:;" class="list-group-item{$steps[4]}"><span class="glyphicon glyphicon-ok"></span> &nbsp; 成功</a>
+							<a href="javascript:;" class="list-group-item{$steps[3]}"><span class="glyphicon glyphicon-cloud"></span> &nbsp; 注册云服务</a>
+							<a href="javascript:;" class="list-group-item{$steps[4]}"><span class="glyphicon glyphicon-refresh"></span> &nbsp; 更新到完整版</a>
+							<a href="javascript:;" class="list-group-item{$steps[5]}"><span class="glyphicon glyphicon-ok"></span> &nbsp; 成功</a>
 						</ul>
 					</div>
 				</div>
@@ -762,7 +763,12 @@ function tpl_frame() {
 				</div>
 			</div>
 			<div class="footer" style="margin:15px auto;">
-				
+				<div class="text-center">
+					<a href="http://www.5gwang.cn">关于5G网</a> &nbsp; &nbsp; <a href="http://www.5gwang.cn">5G网帮助</a> &nbsp; &nbsp; <a href="http://www.5gwang.cn">购买授权</a>
+				</div>
+				<div class="text-center">
+					Powered by <a href="http://www.5gwang.cn"><b>5G网</b></a> v0.8 &copy; 2014 <a href="http://www.5gwang.cn">www.5gwang.cn</a>
+				</div>
 			</div>
 		</div>
 		<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
@@ -778,19 +784,19 @@ function tpl_install_license() {
 		<div class="panel panel-default">
 			<div class="panel-heading">阅读许可协议</div>
 			<div class="panel-body" style="overflow-y:scroll;max-height:400px;line-height:20px;">
-				<h3>版权所有 (c)2018，微擎团队保留所有权利。 </h3>
+				<h3>版权所有 (c)2014，5G网团队保留所有权利。 </h3>
 				<p>
-					感谢您选择微擎- 微信公众平台自助开源引擎 <br />
+					感谢您选择5G网 - 微信公众平台自助开源引擎（以下简称Qdyma，Qdyma基于 PHP + MySQL的技术开发，全部源码开放。 <br />
 					为了使你正确并合法的使用本软件，请你在使用前务必阅读清楚下面的协议条款：
 				</p>
 				<p>
-					<strong>一、本授权协议适用且仅适用于微擎系统，任何版本，微擎官方对本授权协议的最终解释权。</strong>
+					<strong>一、本授权协议适用且仅适用于5G网系统(Qdyma, MicroEngine. 以下简称5G网)任何版本，5G网官方对本授权协议的最终解释权。</strong>
 				</p>
 				<p>
 					<strong>二、协议许可的权利 </strong>
 					<ol>
 						<li>您可以在完全遵守本最终用户授权协议的基础上，将本软件应用于非商业用途，而不必支付软件版权授权费用。</li>
-						<li>您可以在协议规定的约束和限制范围内修改微起点源代码或界面风格以适应您的网站要求。</li>
+						<li>您可以在协议规定的约束和限制范围内修改5G网源代码或界面风格以适应您的网站要求。</li>
 						<li>您拥有使用本软件构建的网站全部内容所有权，并独立承担与这些内容的相关法律义务。</li>
 						<li>获得商业授权之后，您可以将本软件应用于商业用途，同时依据所购买的授权类型中确定的技术支持内容，自购买时刻起，在技术支持期限内拥有通过指定的方式获得指定范围内的技术支持服务。商业授权用户享有反映和提出意见的权力，相关意见将被作为首要考虑，但没有一定被采纳的承诺或保证。</li>
 					</ol>
@@ -800,7 +806,7 @@ function tpl_install_license() {
 					<ol>
 						<li>未获商业授权之前，不得将本软件用于商业用途（包括但不限于企业网站、经营性网站、以营利为目的或实现盈利的网站）。</li>
 						<li>未经官方许可，不得对本软件或与之关联的商业授权进行出租、出售、抵押或发放子许可证。</li>
-						<li>未经官方许可，禁止在微起点的整体或任何部分基础上以发展任何派生版本、修改版本或第三方版本用于重新分发。</li>
+						<li>未经官方许可，禁止在5G网的整体或任何部分基础上以发展任何派生版本、修改版本或第三方版本用于重新分发。</li>
 						<li>如果您未能遵守本协议的条款，您的授权将被终止，所被许可的权利将被收回，并承担相应法律责任。</li>
 					</ol>
 				</p>
@@ -809,7 +815,7 @@ function tpl_install_license() {
 					<ol>
 						<li>本软件及所附带的文件是作为不提供任何明确的或隐含的赔偿或担保的形式提供的。</li>
 						<li>用户出于自愿而使用本软件，您必须了解使用本软件的风险，在尚未购买产品技术服务之前，我们不承诺对免费用户提供任何形式的技术支持、使用担保，也不承担任何因使用本软件而产生问题的相关责任。</li>
-						<li>电子文本形式的授权协议如同双方书面签署的协议一样，具有完全的和等同的法律效力。您一旦开始确认本协议并安装  微擎，即被视为完全理解并接受本协议的各项条款，在享有上述条款授予的权力的同时，受到相关的约束和限制。协议许可范围以外的行为，将直接违反本授权协议并构成侵权，我们有权随时终止授权，责令停止损害，并保留追究相关责任的权力。</li>
+						<li>电子文本形式的授权协议如同双方书面签署的协议一样，具有完全的和等同的法律效力。您一旦开始确认本协议并安装  Qdyma，即被视为完全理解并接受本协议的各项条款，在享有上述条款授予的权力的同时，受到相关的约束和限制。协议许可范围以外的行为，将直接违反本授权协议并构成侵权，我们有权随时终止授权，责令停止损害，并保留追究相关责任的权力。</li>
 						<li>如果本软件带有其它软件的整合API示范例子包，这些文件版权不属于本软件官方，并且这些文件是没经过授权发布的，请参考相关软件的使用许可合法的使用。</li>
 					</ol>
 				</p>
@@ -940,7 +946,7 @@ function tpl_install_env($ret = array()) {
 			</table>
 		</div>
 
-		<div class="alert alert-info">系统要求微擎整个安装目录必须可写, 才能使用微擎所有功能。</div>
+		<div class="alert alert-info">系统要求5G网整个安装目录必须可写, 才能使用5G网所有功能。</div>
 		<div class="panel panel-default">
 			<div class="panel-heading">目录权限监测</div>
 			<table class="table table-striped">
@@ -1006,8 +1012,8 @@ function tpl_install_db($error = '') {
 							<input type="radio" name="type" value="local"{$insTypes['local']}{$disabled}> 离线安装
 						</label>
 						<div class="help-block">
-							<span style="color:red">微擎</span> <br/>
-							在线安装能够直接安装最新版本微擎系统, 如果在线安装困难, 请下载离线安装包后使用本地安装. <br/>
+							<span style="color:red">由于在线安装是精简版，安装后，请务必注册云服务更新到完整版</span> <br/>
+							在线安装能够直接安装最新版本5G网系统, 如果在线安装困难, 请下载离线安装包后使用本地安装. <br/>
 							离线安装包可能不是最新程序, 如果你不确定, 可以现在访问官网重新下载一份最新的.
 						</div>
 					</div>
@@ -1044,7 +1050,7 @@ function tpl_install_db($error = '') {
 				<div class="form-group">
 					<label class="col-sm-2 control-label">数据库名称</label>
 					<div class="col-sm-4">
-						<input class="form-control" type="text" name="db[name]" value="we7team">
+						<input class="form-control" type="text" name="db[name]" value="Qdyma">
 					</div>
 				</div>
 			</div>
@@ -1114,7 +1120,7 @@ EOF;
 
 function tpl_install_cloud($iframe) {
 	echo <<<EOF
-
+<iframe src="{$iframe}" onload="" marginheight="0" marginwidth="0" frameborder="0" width="960px" style="height:1500px;" scrolling="no" allowTransparency="true"></iframe>
 <form class="form-inline" role="form" method="post">
 	<input type="hidden" name="do" id="do" />
 	<ul class="pager">
@@ -1248,7 +1254,7 @@ EOF;
 		$.ajax({
 			type : "get",
 			data : {'date' : config.date, 'version' : config.version, 'siteurl' : config.siteurl},
-			url : "http://www.qdyma.com/",
+			url : "http://www.5gwang.cn/",
 			dataType : "jsonp",
 			success : function(data){
 				if (data['check_time']['errno'] == '0') {
@@ -1410,10 +1416,10 @@ function tpl_install_finish() {
 	echo <<<EOF
 	<div class="page-header"><h3>安装完成</h3></div>
 	<div class="alert alert-success">
-		恭喜您!已成功安装“微擎 - 公众平台自助开源引擎”系统，您现在可以: <a target="_blank" class="btn btn-success" href="./web/index.php">访问网站首页</a>
+		恭喜您!已成功安装“5G网 - 公众平台自助开源引擎”系统，您现在可以: <a target="_blank" class="btn btn-success" href="./web/index.php">访问网站首页</a>
 	</div>
 	<div class="form-group">
-		<h5><strong>微擎应用商城</strong></h5>
+		<h5><strong>5G网应用商城</strong></h5>
 		<span class="help-block">应用商城特意为您推荐了一批优秀模块、主题，赶紧来安装几个吧！</span>
 		<table class="table table-bordered">
 			<tbody>
@@ -1423,7 +1429,11 @@ function tpl_install_finish() {
 		</table>
 	</div>
 
-	
+	<div class="alert alert-warning">
+		我们强烈建议您立即注册云服务，享受“在线更新”等云服务。
+		<a target="_blank" class="btn btn-success" href="./web/index.php?c=cloud&a=profile">马上去注册</a>
+		<a target="_blank" class="btn btn-success" href="http://www.5gwang.cn/app_index.html" target="_blank">访问应用商城首页</a>
+	</div>
 EOF;
 	tpl_frame();
 }

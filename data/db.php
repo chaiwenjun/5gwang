@@ -4,7 +4,7 @@ $schemas = 'a:103:{i:0;a:6:{s:9:"tablename";s:11:"ims_account";s:7:"charset";s:1
 $datas = array();
 //公众号相关
 $datas[] = "INSERT INTO `ims_account` (`acid`, `uniacid`, `hash`, `type`, `isconnect`) VALUES(1, 1, 'uRr8qvQV', 1, 0);";
-$datas[] = "INSERT INTO `ims_account_wechats` (`acid`, `uniacid`, `token`, `encodingaeskey`, `level`, `name`, `account`, `original`, `signature`, `country`, `province`, `city`, `username`, `password`, `lastupdate`, `key`, `secret`, `styleid`, `subscribeurl`) VALUES (1, 1, 'omJNpZEhZeHj1ZxFECKkP48B5VFbk1HP', '', 1, 'we7team', '', '', '', '', '', '', '', '', 0, '', '', 1, '');";
+$datas[] = "INSERT INTO `ims_account_wechats` (`acid`, `uniacid`, `token`, `encodingaeskey`, `level`, `name`, `account`, `original`, `signature`, `country`, `province`, `city`, `username`, `password`, `lastupdate`, `key`, `secret`, `styleid`, `subscribeurl`) VALUES (1, 1, 'omJNpZEhZeHj1ZxFECKkP48B5VFbk1HP', '', 1, 'Qdyma', '', '', '', '', '', '', '', '', 0, '', '', 1, '');";
 $datas[] = "INSERT INTO `ims_uni_account` (`uniacid`, `groupid`, `name`, `description`, `default_acid`, `title_initial`) VALUES(1, -1, '起点团队', '一个朝气蓬勃的团队', '1', 'W');";
 
 $datas[] = "INSERT INTO `ims_uni_group` (`id`, `name`, `modules`, `templates`) VALUES(1, '体验套餐服务', 'N;', 'N;');";
@@ -19,7 +19,7 @@ INSERT INTO `ims_site_multi` (`id`, `uniacid`, `title`, `styleid`, `site_info`, 
 (1, 1, '起点团队', 1, '', 1);
 EOF;
 $datas[] = "INSERT INTO `ims_site_styles` (`id`, `uniacid`, `templateid`, `name`) VALUES(1, 1, 1, '微站默认模板_gC5C');";
-$datas[] = "INSERT INTO `ims_site_templates` (`id`, `name`, `title`, `description`, `author`, `url`, `type`) VALUES(1, 'default', '微站默认模板', '由起点提供默认微站模板套系', '起点团队', 'http://qdyma.com', 1);";
+$datas[] = "INSERT INTO `ims_site_templates` (`id`, `name`, `title`, `description`, `author`, `url`, `type`) VALUES(1, 'default', '微站默认模板', '由起点提供默认微站模板套系', '起点团队', 'http://5gwang.cn', 1);";
 
 $datas[] = <<<EOF
 INSERT INTO `ims_core_settings` (`key`, `value`) VALUES
@@ -38,18 +38,18 @@ $datas[] = "INSERT INTO `ims_mc_groups` (`groupid`, `uniacid`, `title`, `isdefau
 
 $datas[] = <<<EOF
 INSERT INTO `ims_modules` (`mid`, `name`, `type`, `title`, `version`, `ability`, `description`, `author`, `url`, `settings`, `subscribes`, `handles`, `isrulefields`, `issystem`, `target`, `iscard`, `permissions`, `title_initial`, `wxapp_support`, `app_support`, `welcome_support`, `oauth_type`, `webapp_support`) VALUES
-(1, 'basic', 'system', '基本文字回复', '1.0', '和您进行简单对话', '一问一答得简单对话. 当访客的对话语句中包含指定关键字, 或对话语句完全等于特定关键字, 或符合某些特定的格式时. 系统自动应答设定好的回复内容.', 'WeEngine Team', 'http://www.qdyma.com/', 0, '', '', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
-(2, 'news', 'system', '基本混合图文回复', '1.0', '为你提供生动的图文资讯', '一问一答得简单对话, 但是回复内容包括图片文字等更生动的媒体内容. 当访客的对话语句中包含指定关键字, 或对话语句完全等于特定关键字, 或符合某些特定的格式时. 系统自动应答设定好的图文回复内容.', 'WeEngine Team', 'http://www.qdyma.com/', 0, '', '', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
-(3, 'music', 'system', '基本音乐回复', '1.0', '提供语音、音乐等音频类回复', '在回复规则中可选择具有语音、音乐等音频类的回复内容，并根据用户所设置的特定关键字精准的返回给粉丝，实现一问一答得简单对话。', 'WeEngine Team', 'http://www.qdyma.com/', 0, '', '', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
-(4, 'userapi', 'system', '自定义接口回复', '1.1', '更方便的第三方接口设置', '自定义接口又称第三方接口，可以让开发者更方便的接入起点系统，高效的与微信公众平台进行对接整合。', 'WeEngine Team', 'http://www.qdyma.com/', 0, '', '', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
-(5, 'recharge', 'system', '会员中心充值模块', '1.0', '提供会员充值功能', '', 'WeEngine Team', 'http://www.qdyma.com/', 0, '', '', 0, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
-(6, 'custom', 'system', '多客服转接', '1.0.0', '用来接入腾讯的多客服系统', '', 'WeEngine Team', 'http://bbs.qdyma.com', 0, 'a:0:{}', 'a:6:{i:0;s:5:\"image\";i:1;s:5:\"voice\";i:2;s:5:\"video\";i:3;s:8:\"location\";i:4;s:4:\"link\";i:5;s:4:\"text\";}', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
-(7, 'images', 'system', '基本图片回复', '1.0', '提供图片回复', '在回复规则中可选择具有图片的回复内容，并根据用户所设置的特定关键字精准的返回给粉丝图片。', 'WeEngine Team', 'http://www.qdyma.com/', 0, '', '', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
-(8, 'video', 'system', '基本视频回复', '1.0', '提供图片回复', '在回复规则中可选择具有视频的回复内容，并根据用户所设置的特定关键字精准的返回给粉丝视频。', 'WeEngine Team', 'http://www.qdyma.com/', 0, '', '', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
-(9, 'voice', 'system', '基本语音回复', '1.0', '提供语音回复', '在回复规则中可选择具有语音的回复内容，并根据用户所设置的特定关键字精准的返回给粉丝语音。', 'WeEngine Team', 'http://www.qdyma.com/', 0, '', '', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
-(10, 'chats', 'system', '发送客服消息', '1.0', '公众号可以在粉丝最后发送消息的48小时内无限制发送消息', '', 'WeEngine Team', 'http://www.qdyma.com/', 0, '', '', 0, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
-(11, 'wxcard', 'system', '微信卡券回复', '1.0', '微信卡券回复', '微信卡券回复', 'WeEngine Team', 'http://www.qdyma.com/', 0, '', '', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
-(12, 'store', 'business', '站内商城', '1.0', '站内商城', '站内商城', 'WeEngine Team', 'http://www.qdyma.com/', 0, '', '', 0, 1, 0, 0, '', '', 1, 2, 1, 1, 1);
+(1, 'basic', 'system', '基本文字回复', '1.0', '和您进行简单对话', '一问一答得简单对话. 当访客的对话语句中包含指定关键字, 或对话语句完全等于特定关键字, 或符合某些特定的格式时. 系统自动应答设定好的回复内容.', 'Easy Studio Team', 'http://www.5gwang.cn/', 0, '', '', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
+(2, 'news', 'system', '基本混合图文回复', '1.0', '为你提供生动的图文资讯', '一问一答得简单对话, 但是回复内容包括图片文字等更生动的媒体内容. 当访客的对话语句中包含指定关键字, 或对话语句完全等于特定关键字, 或符合某些特定的格式时. 系统自动应答设定好的图文回复内容.', 'Easy Studio Team', 'http://www.5gwang.cn/', 0, '', '', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
+(3, 'music', 'system', '基本音乐回复', '1.0', '提供语音、音乐等音频类回复', '在回复规则中可选择具有语音、音乐等音频类的回复内容，并根据用户所设置的特定关键字精准的返回给粉丝，实现一问一答得简单对话。', 'Easy Studio Team', 'http://www.5gwang.cn/', 0, '', '', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
+(4, 'userapi', 'system', '自定义接口回复', '1.1', '更方便的第三方接口设置', '自定义接口又称第三方接口，可以让开发者更方便的接入起点系统，高效的与微信公众平台进行对接整合。', 'Easy Studio Team', 'http://www.5gwang.cn/', 0, '', '', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
+(5, 'recharge', 'system', '会员中心充值模块', '1.0', '提供会员充值功能', '', 'Easy Studio Team', 'http://www.5gwang.cn/', 0, '', '', 0, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
+(6, 'custom', 'system', '多客服转接', '1.0.0', '用来接入腾讯的多客服系统', '', 'Easy Studio Team', 'http://bbs.5gwang.cn', 0, 'a:0:{}', 'a:6:{i:0;s:5:\"image\";i:1;s:5:\"voice\";i:2;s:5:\"video\";i:3;s:8:\"location\";i:4;s:4:\"link\";i:5;s:4:\"text\";}', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
+(7, 'images', 'system', '基本图片回复', '1.0', '提供图片回复', '在回复规则中可选择具有图片的回复内容，并根据用户所设置的特定关键字精准的返回给粉丝图片。', 'Easy Studio Team', 'http://www.5gwang.cn/', 0, '', '', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
+(8, 'video', 'system', '基本视频回复', '1.0', '提供图片回复', '在回复规则中可选择具有视频的回复内容，并根据用户所设置的特定关键字精准的返回给粉丝视频。', 'Easy Studio Team', 'http://www.5gwang.cn/', 0, '', '', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
+(9, 'voice', 'system', '基本语音回复', '1.0', '提供语音回复', '在回复规则中可选择具有语音的回复内容，并根据用户所设置的特定关键字精准的返回给粉丝语音。', 'Easy Studio Team', 'http://www.5gwang.cn/', 0, '', '', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
+(10, 'chats', 'system', '发送客服消息', '1.0', '公众号可以在粉丝最后发送消息的48小时内无限制发送消息', '', 'Easy Studio Team', 'http://www.5gwang.cn/', 0, '', '', 0, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
+(11, 'wxcard', 'system', '微信卡券回复', '1.0', '微信卡券回复', '微信卡券回复', 'Easy Studio Team', 'http://www.5gwang.cn/', 0, '', '', 1, 1, 0, 0, '', '', 1, 2, 1, 1, 1),
+(12, 'store', 'business', '站内商城', '1.0', '站内商城', '站内商城', 'Easy Studio Team', 'http://www.5gwang.cn/', 0, '', '', 0, 1, 0, 0, '', '', 1, 2, 1, 1, 1);
 EOF;
 
 $datas[] = <<<EOF
